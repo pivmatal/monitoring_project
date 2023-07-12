@@ -17,7 +17,7 @@ def send_email_about_avaliable(avaliable):
 
     text = ""
     for site in avaliable:
-        text += site + "\n"
+        text += str(site[0]) + "\n"
 
     print(text)
 
