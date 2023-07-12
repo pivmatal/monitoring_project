@@ -277,7 +277,6 @@ if len(notavailable) > 0:
         monstatus.write("<td>{}</td>\n".format(site[2]))
         monstatus.write("</tr>\n")
 
-
 if len(errors) > 0:
     for site in errors:
         monstatus.write("<tr>\n")
@@ -291,4 +290,5 @@ monstatus.write("</table>\n")
 monstatus.close()
 
 
-# if len(available) > 0:
+# if len(available) > 0: 
+# тут Димина функция отправляющая отчет на почту
