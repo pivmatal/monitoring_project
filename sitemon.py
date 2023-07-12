@@ -41,7 +41,7 @@ monlog = MonitoringLog(status="Started")
 monlog.save()
 
 file_path_one = 'image_one_hour'
-file_path_two = 'image_two_hour/'
+file_path_two = 'image_two_hour'
 for f in os.listdir(file_path_one):
     os.remove(os.path.join(file_path_one, f))
 
@@ -276,10 +276,9 @@ if len(notavailable) > 0:
         monstatus.write("<td><a href='{}'>{}</a></td>\n".format(site[1], site[1]))
         monstatus.write("<td>{}</td>\n".format(site[2]))
         monstatus.write("</tr>\n")
-    
+
 
 if len(errors) > 0:
-
     for site in errors:
         monstatus.write("<tr>\n")
         monstatus.write("<td>{}</td>\n".format(site[0]))
@@ -289,6 +288,7 @@ if len(errors) > 0:
 monstatus.write("</tbody>\n")
 monstatus.write("</table>\n")
 
-
-
 monstatus.close()
+
+
+# if len(available) > 0:
