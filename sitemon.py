@@ -1,15 +1,13 @@
 #!/home/ufk/ufk_venv/bin/python
-import shutil
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-import pandas as pd
 import django
 import os
 
-from selenium.webdriver.chrome.options import Options
+import send_to_email_avaliable
+
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.by import By
 
@@ -290,5 +288,6 @@ monstatus.write("</table>\n")
 monstatus.close()
 
 
-# if len(available) > 0: 
-# тут Димина функция отправляющая отчет на почту
+if len(available) > 0: 
+    send_to_email_avaliable.send_email_about_avaliable(available)
+
